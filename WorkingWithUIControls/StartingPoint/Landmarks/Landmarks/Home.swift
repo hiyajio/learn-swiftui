@@ -20,7 +20,6 @@ struct CategoryHome: View {
     }
     
     @State var showingProfile = false
-    @EnvironmentObject var userData: UserData
     
     var profileButton: some View {
         Button(action: { self.showingProfile.toggle() }) {
@@ -52,8 +51,7 @@ struct CategoryHome: View {
             .navigationBarTitle(Text("Featured"))
             .navigationBarItems(trailing: profileButton)
             .sheet(isPresented: $showingProfile) {
-                ProfileHost()
-                    .environmentObject(self.userData)
+                Text("User Profile")
             }
         }
     }
@@ -69,5 +67,6 @@ struct FeaturedLandmarks: View {
 struct CategoryHome_Previews: PreviewProvider {
     static var previews: some View {
         CategoryHome()
+            .environmentObject(UserData())
     }
 }

@@ -2,8 +2,9 @@
 See LICENSE folder for this sample’s licensing information.
 
 Abstract:
-An object that models a user profile.
+A model object that stores user profile data.
 */
+
 import Foundation
 
 struct Profile {
